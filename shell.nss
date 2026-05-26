@@ -7,45 +7,42 @@
 	modify.remove.duplicate=1
 	tip.enabled=true
 }
-$uniget= 'C:\Users\Zaved\AppData\Local\Programs\UniGetUI\UniGetUI.exe'
+
 
 
 import 'goto_en.nss'
-item(title="ZAVED's\t"+'PC' image=image.glyph(0xE100) type='*|Taskbar' vis=label sep=bottom position=0)
 import 'imports/theme.nss'
 import 'imports/images.nss'
-import 'remove.nss'
-
-menu(title='Quick Files' type='*|taskbar' image=0xe0e8){
-	import 'custom_imports/quick_files.nss'
-
-}
+import 'imports/remove.nss'
 
 
-item(title="Directory" image=\uE0E8 cmd='"@app.dir"' col=1)
-menu(title='Nilesoft Shell' image = image.glyph(\uE249,18)  sep=both type='*|taskbar')
-{
-	import 'custom_imports/nilesoftShellMenu.nss'
-	
-	menu(title='Actions' type='*'  image=icon.settings){
+//item(title="ZAVED's\t"+'PC' image=image.glyph(0xE100) type='*|Taskbar' vis=label sep=bottom position=0)
+
+
+menu(title='Actions' type='*'  image=icon.settings ){
 		
 	}
 
+menu(title='Nilesoft Shell' image = image.glyph(\uE249,18)  sep=both type='*|taskbar' )
+{
+	import 'custom_imports/nilesoftShellMenu.nss'
+	
+	
+	
 }
-
-
-
+item(title = "Reload" cmd= app.reload()  image = image.glyph(\uE045,27) col)
+item(title = "Reload" cmd= app.reload() type= 'taskbar' image = image.glyph(\uE045,27) )
+modify(find='"open"' image=icon.open_in_new_process)
 
 import 'custom_imports/desktopicons.nss'
-modify(find='"sort by"|"view"|"display settings"|"personalise"'   pos=bottom )   //desktop icons :-
-modify(find='"refresh"' pos=top)
+modify(find='"sort by"|"view"|"display settings"|"personalise"| new'   pos=bottom )   //desktop icons :-
+//modify(find='"refresh"' pos=top)
+
+//modify(find='"take ownership"' pos = top)
 
 
-	
 
-menu(title='misc' type='*' image=icon.pin){}
 
-modify(find='"open"' image=icon.open_in_new_process menu='misc' )
 
 
 modify(find='edit with IDLE' image = \ue230)
@@ -57,5 +54,6 @@ modify(find='"open file location"' pos=5 sep=none)
 modify(find='"properties"' sep=none)
 menu(title='Apps' expanded=true image=icon.settings){
 	import 'custom_imports/pro.nss'
-
+	
 }
+modify(find='"paste into file"' image=icon.paste_shortcut )
