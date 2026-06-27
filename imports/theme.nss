@@ -3,12 +3,14 @@
 	name = "modern"
 
 	view = view.small
-
+	
+	dark= 'true'
 	background
 	{
 		color = #1e1e2e
-		opacity = 100
-		// effect = 2
+		opacity = 20
+		effect = 2
+		
 	}
 
 	item
@@ -53,14 +55,19 @@
 	{
 		enabled = true
 		size = 5
-		opacity = 5
-		color = #11111b
+		opacity = 20
+		color = #27160c
 	}
 
 	separator
 	{
 		size = 1
-		color = #313244
+		color = #a89f76
+		margin{
+			left= 10
+			right = 20
+		}
+
 	}
 
 	symbol
