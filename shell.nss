@@ -22,14 +22,15 @@ import 'imports/remove.nss'
 menu(title='Actions' type='*'  image=icon.settings ){
 		
 	}
-
-menu(title='Nilesoft Shell' image = image.glyph(\uE249,18)  sep=both type='*|taskbar' )
+menu(title='Nilesoft Shell' image = image.glyph(\uE249,18)  sep=both)
 {
 	import 'custom_imports/nilesoftShellMenu.nss'
 	
 	
 	
 }
+import 'imports/taskbarmenu.nss'
+
 item(title = "Reload" cmd= app.reload()  image = image.glyph(\uE045,27) col)
 item(title = "Reload" cmd= app.reload() type= 'taskbar' image = image.glyph(\uE045,27) )
 modify(find='"open"' image=icon.open_in_new_process)
